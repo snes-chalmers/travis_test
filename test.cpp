@@ -2,6 +2,8 @@
 
 int main(int argn, char**argc) {
 
- return 0;
+ std::cout << "Testing the current function ..." <<std::endl;
+
+ return -22;
  
 }
