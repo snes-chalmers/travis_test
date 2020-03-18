@@ -1,0 +1,14 @@
+lannguage: c++
+
+compiler:
+    - g++
+
+notifications:
+    email:
+        recipients:
+            - jorge.i.nunez.ramirez@gmail.com
+
+script:
+
+   # Run the tests via the Python scripts
+    - test
