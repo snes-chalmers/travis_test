@@ -8,7 +8,17 @@ notifications:
         recipients:
             - jorge.i.nunez.ramirez@gmail.com
 
-script:
+env:
+    matrix:
+       # Serial build and test
+       - CONFIGURE_COMMAND="g++ test.cpp -o test"
+         TEST_SCRIPT=./test
 
-   # Run the tests via the Python scripts
-    - test
+install:
+    # Compile the test code
+    - echo $CONFIGURE_COMMAND
+    - $CONFIGURE_COMMAND
+
+script:
+    # Run the tests via the Python scripts
+    - $TEST_SCRIPT
