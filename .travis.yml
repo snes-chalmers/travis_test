@@ -1,4 +1,4 @@
-lannguage: c++
+language: c++
 
 compiler:
     - g++
@@ -6,7 +6,7 @@ compiler:
 notifications:
     email:
         recipients:
-            - jorge.i.nunez.ramirez@gmail.com
+            - test@test.com
 
 env:
     matrix:
@@ -20,5 +20,5 @@ install:
     - $CONFIGURE_COMMAND
 
 script:
-    # Run the tests via the Python scripts
+    # Run the test
     - $TEST_SCRIPT
