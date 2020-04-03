@@ -8,6 +8,9 @@ notifications:
         recipients:
             - test@test.com
 
+before_install:
+    - pip install --user cpp-coveralls
+
 env:
     matrix:
        # Serial build and test
