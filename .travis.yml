@@ -14,7 +14,7 @@ before_install:
 env:
     matrix:
        # Serial build and test
-       - CONFIGURE_COMMAND="g++ --enable-gcov test.cpp -o test"
+       - CONFIGURE_COMMAND="g++ -fprofile-arcs -ftest-coverage -fPIC test.cpp -o test"
          TEST_SCRIPT=./test
 
 install:
