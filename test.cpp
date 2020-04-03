@@ -2,7 +2,10 @@
 
 int main(int argn, char**argc) {
 
- std::cout << "Testing the current function ..." <<std::endl;
+ if (argc[0] == "1")
+   std::cout << "Testing the 1st conditional option ..." <<std::endl;
+ else
+   std::cout << "Testing the 2nd conditional option ..." <<std::endl;
 
  return 0;
  
