@@ -6,15 +6,19 @@ compiler:
 notifications:
     email:
         recipients:
-            - test@test.com
+            - jnunezra@onera.com
 
 before_install:
-    - pip install --user cpp-coveralls
+    - git clone https://github.com/spack/spack.git
+    - cd spack/bin
+    - ./spack install zlib
+    - cd -
+    #- pip install --user cpp-coveralls
 
 env:
     matrix:
        # Serial build and test
-       - CONFIGURE_COMMAND="g++ -fprofile-arcs -ftest-coverage -fPIC test.cpp -o test"
+       - CONFIGURE_COMMAND="g++ test.cpp -o test"
          TEST_SCRIPT=./test
 
 install:
@@ -26,5 +30,5 @@ script:
     # Run the test
     - $TEST_SCRIPT
 
-after_success:
-  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
+#after_success:
+#  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
